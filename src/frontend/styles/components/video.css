@@ -3,6 +3,16 @@
     width: 15rem;
 }
 
+.video-thumbnail iframe {
+    display: block;
+    height: 100%;
+}
+
+.video-thumbnail div {
+    height: 10.75rem;
+    width: 15rem;
+}
+
 .vid-wrapper {
     width: 15rem;
 }

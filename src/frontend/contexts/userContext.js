@@ -12,6 +12,12 @@ const UserProvider = ({children}) => {
                 return { ...state, ...action.payload };
             case 'LOGOUT':
                 return { ...state , ...user };
+            case 'ADDTOHISTORY': 
+                return { ...state, foundUser : action.payload };
+            case 'REMOVEFROMHISTORY': 
+                return { ...state, foundUser : action.payload };
+            case 'CLEARHISTORY': 
+                return { ...state, foundUser : action.payload }
             default:
                 return { ...state};
         }
