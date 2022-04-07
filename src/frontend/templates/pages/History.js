@@ -31,7 +31,7 @@ export const History = () => {
         <div className='videos-wrapper px-xs py-sm d-flex fw-wrap ai-c jc-c gap-1 mx-auto'>
             { [...userState.foundUser.history].map( video => <Video fromHistory={true}  key={video._id} videoDetails={video} /> ) }
         </div>
-        </>) : (<p className='f-2x f-w-500'> No History</p>)}
+        </>) : (<p className='f-2x f-w-500 px-sm py-sm ta-c'> No History</p>)}
     </main>
     );
 };

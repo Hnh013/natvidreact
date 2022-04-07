@@ -1,10 +1,14 @@
 import React, { createContext , useContext , useState } from 'react';
-import { getAllVideos } from '../services/videoService';
+import { getAllVideos, videoInArrayChecker } from '../services/videoService';
+import { useUser } from './userContext';
+
 
 const DataContext = createContext();
 
 const DataProvider = ({ children }) => {
     let [ videos , setVideos] = useState([]);
+
+    const { userState } = useUser();
 
     const fetchVideos = async () => {
         let response;
@@ -22,6 +26,11 @@ const DataProvider = ({ children }) => {
     }
 
     fetchVideos();
+
+    if(userState.foundUser) {
+        videos = videoInArrayChecker([...userState.foundUser.likes], [...videos] , 'like' );
+        videos = videoInArrayChecker([...userState.foundUser.watchlater], [...videos] , 'watchlater' );
+    }
  
     return (
         <DataContext.Provider value={{ videos }}>

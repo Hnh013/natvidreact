@@ -17,7 +17,15 @@ const UserProvider = ({children}) => {
             case 'REMOVEFROMHISTORY': 
                 return { ...state, foundUser : action.payload };
             case 'CLEARHISTORY': 
-                return { ...state, foundUser : action.payload }
+                return { ...state, foundUser : action.payload };
+            case 'ADDTOLIKES': 
+                return { ...state, foundUser : action.payload };
+            case 'REMOVEFROMLIKES': 
+                return { ...state, foundUser : action.payload };
+            case 'ADDTOWATCHLATER': 
+                return { ...state, foundUser : action.payload };
+            case 'REMOVEFROMWATCHLATER': 
+                return { ...state, foundUser : action.payload };
             default:
                 return { ...state};
         }
