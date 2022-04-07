@@ -18,7 +18,7 @@ export const videos = [
 
   {
     _id: uuid(),
-    title: `Marvel Studios Moon Knight | Official Trailer | Disney+`,
+    title: `Moon Knight | Official Trailer | Disney+`,
     channelName: "Marvel Entertainment",
     categoryName: "ott",
     videoPath: "https://www.youtube.com/embed/x7Krla_UxRg",
@@ -26,26 +26,50 @@ export const videos = [
     description:
       "Welcome to chaos 🌙 Watch the new trailer for Marvel Studios Moon Knight and start streaming the Original series March 30 on Disney+"
    },
-   
-  {
-    _id: uuid(),
-    title: `Black Holes | National Geographic`,
-    channelName: "Nat Geo",
-    categoryName: "documentary",
-    videoPath: "https://www.youtube.com/embed/kOEDG3j1bjs",
-    type : "video/mp4",
-    description:
-    "At the center of our galaxy, a supermassive black hole churns. Learn about the types of black holes, how they form, and how scientists discovered these invisible, yet extraordinary objects in our universe."
-   }
-   ,
+
    {
     _id: uuid(),
-    title: `Tekken | Bloodlines`,
-    channelName: "Netflix",
-    categoryName: "anime",
-    videoPath: "https://www.youtube.com/embed/WTc2xXcJFwU",
+    title: `Lost treasures of Egypt`,
+    channelName: "National Geographic",
+    categoryName: "documentary",
+    videoPath: "https://www.youtube.com/embed/FNfgdk2CU4Y",
     type : "video/mp4",
     description:
-    `"Power is everything." Jin Kazama learned the family self-defense arts, Kazama-Style Traditional Martial Arts, from his mother at an early age. Even so, he was powerless when a monstrous evil suddenly appeared, destroying everything dear to him, changing his life forever.`
+      "Dr. Basem Gehad and his team discover the remains of a burial portrait in a catacomb in the deserts of Philadelphia, Egypt."
+   },
+
+   {
+    _id: uuid(),
+    title: `Volcanoes 101`,
+    channelName: "National Geographic",
+    categoryName: "documentary",
+    videoPath: "https://www.youtube.com/embed/VNGUdObDoLk",
+    type : "video/mp4",
+    description:
+      "About 1,500 active volcanoes can be found around the world. Learn about the major types of volcanoes, the geological process behind eruptions, and where the most destructive volcanic eruption ever witnessed occurred."
+   },
+
+   {
+    _id: uuid(),
+    title: `No Vacancy (Lyric Video)`,
+    channelName: "One Republic",
+    categoryName: "music",
+    videoPath: "https://www.youtube.com/embed/qXiuVQ-GgA4",
+    type : "video/mp4",
+    description:
+      `Stream & Download OneRepublic latest album Human`
+   } , 
+
+   {
+    _id: uuid(),
+    title: `Post Malone Swae Lee - SunFlower`,
+    channelName: "Post Malone",
+    categoryName: "music",
+    videoPath: "https://www.youtube.com/embed/ApXoWvfEYVU",
+    type : "video/mp4",
+    description:
+      `Stream & Download Post Malone latest songs`
    }
 ];
+
+
