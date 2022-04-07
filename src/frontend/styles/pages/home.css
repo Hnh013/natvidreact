@@ -1,0 +1,17 @@
+.g-g-1 {
+   grid-gap : 1rem;
+}
+
+.alternative-home-icon {
+    display: none;
+}
+
+@media only screen and (max-width: 540px) {
+  .alternative-home-icon {
+    display: block;
+  }
+  
+  .home-logo {
+    display: none;
+  }
+}
