@@ -29,12 +29,16 @@ export const Navbar = () => {
                     <span className='material-icons'> video_library </span>
                 </div>
                 </Link>
+                <Link to={ userState.foundUser ? '/likes' : '/login' }> 
                 <div className='px-xs'>
                     <span className='material-icons'> thumb_up </span>
                 </div>
+                </Link>
+                <Link to={ userState.foundUser ? '/watchlater' : '/login' }> 
                 <div className='px-xs'>
                     <span className='material-icons'> watch_later </span>
                 </div>
+                </Link>
                 <Link to='/'> 
                 <div className='alternative-home-icon px-xs'>
                     <span className='material-icons f-2x txt-bee'> home </span>
