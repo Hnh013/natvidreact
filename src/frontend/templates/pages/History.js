@@ -24,9 +24,9 @@ export const History = () => {
 
     return (
     <main className='main'>
-        { userState.foundUser ? (<>
+        { userState.foundUser && userState.foundUser.history.length > 0 ? (<>
         <div className='d-flex jc-c ai-c px-xs py-xs'>
-              <button className='btn btn-bee' onClick={() => CH(userState.encodedToken)} >Clear History</button>
+              <button className='btn btn-bee bdr-rad-f' onClick={() => CH(userState.encodedToken)} >Clear History</button>
         </div>
         <div className='videos-wrapper px-xs py-sm d-flex fw-wrap ai-c jc-c gap-1 mx-auto'>
             { [...userState.foundUser.history].map( (video,index) => <Video fromHistory={true} key={index} videoDetails={video} /> ) }
