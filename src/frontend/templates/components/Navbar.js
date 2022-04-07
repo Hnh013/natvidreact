@@ -45,7 +45,11 @@ export const Navbar = () => {
                     <span className='material-icons'> playlist_play </span>
 
                 </div>
-                <div className='px-xs'><span className='material-icons'> history </span></div>
+                <Link to={ userState.foundUser ? '/history' : '/login' }> 
+                <div className='px-xs'>
+                    <span className='material-icons'> history </span>
+                </div>
+                </Link>
                 { 
                 userState.foundUser ? 
                 (<span onClick={logoutUser}><span className="material-icons">logout</span></span>) 
