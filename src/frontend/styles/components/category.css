@@ -1,0 +1,8 @@
+.category {
+    transition: transform 350ms;  
+}
+
+.category:hover {
+    transform : scale(1.03)
+}
+ 
