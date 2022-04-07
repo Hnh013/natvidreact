@@ -9,7 +9,7 @@ export const Videos = () => {
     return (
     <main className='main'>
         <div className='videos-wrapper px-xs py-sm d-flex fw-wrap ai-c jc-c gap-1 mx-auto'>
-            { videos.map( (video,index) => <Video fromHistory={false} key={index} videoDetails={video} /> ) }
+            { videos.map( video => <Video fromHistory={false} key={video._id} videoDetails={video} /> ) }
         </div>
     </main>
     );

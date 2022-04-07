@@ -29,7 +29,7 @@ export const History = () => {
               <button className='btn btn-bee bdr-rad-f' onClick={() => CH(userState.encodedToken)} >Clear History</button>
         </div>
         <div className='videos-wrapper px-xs py-sm d-flex fw-wrap ai-c jc-c gap-1 mx-auto'>
-            { [...userState.foundUser.history].map( (video,index) => <Video fromHistory={true} key={index} videoDetails={video} /> ) }
+            { [...userState.foundUser.history].map( video => <Video fromHistory={true}  key={video._id} videoDetails={video} /> ) }
         </div>
         </>) : (<p className='f-2x f-w-500'> No History</p>)}
     </main>
