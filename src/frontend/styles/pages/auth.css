@@ -1,0 +1,8 @@
+.err-msg {
+    font-size: 0.875rem;
+  display: none;
+}
+
+input:invalid ~ span.err-msg {
+    display: block;
+}

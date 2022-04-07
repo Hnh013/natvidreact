@@ -1,19 +1,36 @@
 import "./App.css";
 import { BrowserRouter , Routes , Route } from 'react-router-dom';
-import { Home } from "./frontend/templates/pages";
+import { Home , Signup , Login } from "./frontend/templates/pages";
 import { Navbar , Footer } from "./frontend/templates/components";
+import { ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
+    <>
+    <ToastContainer
+      position="top-left"
+      autoClose={1000}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+    />
     <div className="video-grid-container">
       <BrowserRouter>   
         <Navbar/>
             <Routes>
-                <Route path="/" element={<Home/>}/>
+              <Route path="/" element={<Home/>}/>
+              <Route path="/signup" element={<Signup/>}/>
+              <Route path="/login" element={<Login/>}/>
             </Routes>
         <Footer/>
     </BrowserRouter>
     </div>
+    </>
   );
 }
 
