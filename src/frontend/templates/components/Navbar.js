@@ -1,7 +1,20 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useUser } from '../../contexts/userContext';
+import { toastSuccess } from '../../services/toastService';
 
 export const Navbar = () => {
+
+    const { userState , userDispatcher } = useUser();
+
+    const navigate = useNavigate();
+    
+    const logoutUser = () => {
+        toastSuccess('You have Logged Out!');  
+        userDispatcher({ type: 'LOGOUT'});
+        navigate('/login');
+    }
+
     return (
         <nav className='navbar d-flex ai-c jc-sb py-sm px-sm bg-over txt-smoke'>
             <Link to='/'> 
@@ -27,9 +40,12 @@ export const Navbar = () => {
 
                 </div>
                 <div className='px-xs'><span className='material-icons'> history </span></div>
-                <div className='px-xs'>
-                    <span className='material-icons'> login</span>
-                </div>
+                { 
+                userState.foundUser ? 
+                (<span onClick={logoutUser}><span className="material-icons">logout</span></span>) 
+                : 
+                (<Link to='/login'><span className="material-icons">login</span></Link> )
+                }
             </div>
         </nav>
     );
