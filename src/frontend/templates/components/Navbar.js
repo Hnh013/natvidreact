@@ -24,16 +24,22 @@ export const Navbar = () => {
             </div>
             </Link>
             <div className='d-flex ai-c jc-sa'>
+                <Link to='/videos'> 
                 <div className='px-xs'>
-                    <span className='material-icons'> trending_up </span>
+                    <span className='material-icons'> video_library </span>
                 </div>
+                </Link>
                 <div className='px-xs'>
                     <span className='material-icons'> thumb_up </span>
                 </div>
-                <div className='px-xs'><span className='material-icons'> watch_later </span></div>
+                <div className='px-xs'>
+                    <span className='material-icons'> watch_later </span>
+                </div>
+                <Link to='/'> 
                 <div className='alternative-home-icon px-xs'>
                     <span className='material-icons f-2x txt-bee'> home </span>
                 </div> 
+                </Link>
                 <div className='px-xs'>
                    
                     <span className='material-icons'> playlist_play </span>
