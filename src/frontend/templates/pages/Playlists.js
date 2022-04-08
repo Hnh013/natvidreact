@@ -29,8 +29,8 @@ export const Playlists = () => {
             { userState.foundUser.playlists.map( playlist =>  
             <div className='d-flex pt-sm pb-xs fd-col pos-rel'>
                 <div onClick={() => RP( userState.encodedToken , playlist )} 
-                    className='pos-abs top-rgt bg-over bdr-rad-f txt-metal' >
-                    <span className='material-icons rot-c-45' >add_circle</span>
+                    className='txt-smoke bg-metal pos-abs top-rgt-0 bdr-rad-f d-flex ai-c jc-c' >
+                    <span className='material-icons' >clear</span>
                 </div>
                 <div className='d-flex fd-col' >
                     <div className='f-w-600 f-15x txt-over'>{ playlist.title }</div>
