@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 import { updateIfObjectinArray } from '../../services/videoService';
 import { addToWatchLater, removeFromWatchLater } from '../../services/watchlaterService';
 import { useData } from '../../contexts/dataContext';
-import { addPlaylist, addVideoToPlaylist } from '../../services/playlistService';
+import { addPlaylist, addVideoToPlaylist, removeVideoFromPlaylist } from '../../services/playlistService';
 
 
 
@@ -155,6 +155,8 @@ export const Video = (props) => {
         }
     }
 
+
+
     const AVTP = async (myToken , playlist , videoDetails) => {
         const response = await addVideoToPlaylist(myToken, playlist._id, videoDetails);
         if(response.actionSuccess) {
@@ -175,7 +177,21 @@ export const Video = (props) => {
         }
     }
 
-
+    const RVFP = async (myToken , playlist , videoDetails) => {
+        const response = await removeVideoFromPlaylist(myToken, playlist._id, videoDetails._id);
+        if(response.actionSuccess) {
+            toastSuccess(`Video removed from PLaylist ${playlist.title}`);
+            let updatedPlaylist = response.actionResponse.data.playlist;
+            userDispatcher({ 
+                type: 'REMOVEVIDEOFROMPLAYLIST' , 
+                payload : { ...userState.foundUser , playlists : [...userState.foundUser.playlists].map( playlist => playlist._id === updatedPlaylist._id ? updatedPlaylist : playlist ) 
+                }   
+            });
+            closePlaylistModal();
+        } else {
+                toastError('Oops, an error has occured!');
+        }
+    }
 
     return (
         <div className="vid-wrapper txt-over pos-rel">
@@ -228,6 +244,13 @@ export const Video = (props) => {
 
             { userState.foundUser && props.fromHistory && 
             <div onClick={() => removeInHistory( userState.encodedToken , props.videoDetails )}
+                className='pos-abs d-flex ai-c jc-c top-lft-5 bg-over bdr-rad-f'>
+                <span className='material-icons txt-smoke'>remove_circle</span>
+            </div>
+            }
+
+            { userState.foundUser && props.fromPlaylists !== 'none' &&  
+            <div onClick={() => RVFP( userState.encodedToken , props.fromPlaylists , props.videoDetails )}
                 className='pos-abs d-flex ai-c jc-c top-lft-5 bg-over bdr-rad-f'>
                 <span className='material-icons txt-smoke'>remove_circle</span>
             </div>

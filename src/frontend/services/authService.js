@@ -6,7 +6,6 @@ const loginAction = async (credentials) => {
     try {
       actionResponse = await axios.post('/api/auth/login/', credentials);
       actionSuccess = true;
-      console.log(actionResponse);
     } catch (error) {
       actionResponse = error;
       actionSuccess = false;
