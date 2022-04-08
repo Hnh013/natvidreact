@@ -12,7 +12,7 @@ export const Playlists = () => {
         if (response.actionSuccess) {
             toastSuccess(`Playlist ${playlistDetails.title} was deleted`);
             userDispatcher({
-                type: 'REMOVE_PLAYLIST',
+                type: 'REMOVE_PLAY_LIST',
                 payload: {
                     ...userState.foundUser, playlists: response.actionResponse.data.playlists
                 }

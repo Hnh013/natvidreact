@@ -27,7 +27,6 @@ export const addToLikes = async (myToken , videoDetails) => {
 }
 
 export const removeFromLikes = async (myToken , videoId) => {
-  console.log(videoId);
   let actionResponse = {};
   let actionSuccess = false;
   try {
