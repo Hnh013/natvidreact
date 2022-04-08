@@ -26,7 +26,7 @@ export const Video = (props) => {
         setPlaylistModal('playlist-modal')
     }
 
-    const [credentials, setCredentials] = useState({ title: '', description: '' });
+    const [credentials, setCredentials] = useState({ title: 'my playlist', description: 'my songs' });
 
     const handleCredentialsChange = (e) => {
         const { name, value } = e.target;
@@ -168,6 +168,7 @@ export const Video = (props) => {
     const addNewPlaylist = async (myToken) => {
         const response = await addPlaylist(myToken, credentials);
         if (response.actionSuccess) {
+            setCredentials({ title: 'my playlist', description: 'my songs' });
             toastSuccess(`Playlist ${credentials.title} added`);
             userDispatcher({
                 type: 'ADD_PLAY_LIST',
