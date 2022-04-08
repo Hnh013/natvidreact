@@ -2,6 +2,7 @@ import React from 'react';
 import { useData } from '../../contexts/dataContext';
 import { Video } from '../components';
 
+
 export const Videos = () => {
 
     const { videos } = useData();

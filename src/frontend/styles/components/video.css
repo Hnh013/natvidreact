@@ -20,3 +20,25 @@
 .video-card-txt {
     font-size: 0.75rem;
 }
+
+.playlist-modal {
+    display: none;
+}
+
+.playlist-modal-appear {
+    min-width: 12.5rem;
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    background-color: var(--over);
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    border-radius: 8px;
+    z-index: 2;
+}
+
+.playlist-modal-appear::-webkit-scrollbar {
+    width: none;
+    display: none;
+}

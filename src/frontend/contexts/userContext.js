@@ -26,6 +26,14 @@ const UserProvider = ({children}) => {
                 return { ...state, foundUser : action.payload };
             case 'REMOVEFROMWATCHLATER': 
                 return { ...state, foundUser : action.payload };
+            case 'ADDPLAYLIST': 
+                return { ...state, foundUser : action.payload };
+            case 'REMOVEPLAYLIST': 
+                return { ...state, foundUser : action.payload };
+            case 'ADDVIDEOTOPLAYLIST': 
+                return { ...state, foundUser : action.payload };
+            case 'REMOVEVIDEOFROMPLAYLIST': 
+                return { ...state, foundUser : action.payload };
             default:
                 return { ...state};
         }

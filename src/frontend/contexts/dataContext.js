@@ -7,6 +7,7 @@ const DataContext = createContext();
 
 const DataProvider = ({ children }) => {
     let [ videos , setVideos] = useState([]);
+    let [ selectedVideo , setSelectedVideo ] = useState('none');
 
     const { userState } = useUser();
 
@@ -33,7 +34,7 @@ const DataProvider = ({ children }) => {
     }
  
     return (
-        <DataContext.Provider value={{ videos }}>
+        <DataContext.Provider value={{ videos  , setSelectedVideo , selectedVideo }}>
           { children }
         </DataContext.Provider>
     );
