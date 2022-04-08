@@ -45,7 +45,7 @@ export const Navbar = () => {
                         <span className='material-icons f-2x txt-bee'> home </span>
                     </div>
                 </Link>
-                <Link to='/playlists'>
+                <Link to={userState.foundUser ? '/playlists' : '/login'}>
                     <div className='px-xs'>
                         <span className='material-icons'> playlist_play </span>
                     </div>
