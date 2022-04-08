@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const getLikes = async (myToken) => {
+export const getLikes = async (myToken) => {
           let actionResponse = {};
           let actionSuccess = false;
           try {
@@ -13,7 +13,7 @@ const getLikes = async (myToken) => {
       return { actionResponse , actionSuccess };
 }
 
-const addToLikes = async (myToken , videoDetails) => {
+export const addToLikes = async (myToken , videoDetails) => {
   let actionResponse = {};
   let actionSuccess = false;
   try {
@@ -26,8 +26,7 @@ const addToLikes = async (myToken , videoDetails) => {
   return { actionResponse , actionSuccess };
 }
 
-const removeFromLikes = async (myToken , videoId) => {
-  console.log(videoId);
+export const removeFromLikes = async (myToken , videoId) => {
   let actionResponse = {};
   let actionSuccess = false;
   try {
@@ -39,6 +38,3 @@ const removeFromLikes = async (myToken , videoId) => {
   }
   return { actionResponse , actionSuccess };
 }
-
-
-export { getLikes , addToLikes , removeFromLikes };

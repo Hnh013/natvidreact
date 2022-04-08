@@ -1,3 +1,4 @@
+export { Playlists } from './Playlists';
 export { Likes } from './Likes';
 export { Watchlater } from './Watchlater';
 export { History } from './History';

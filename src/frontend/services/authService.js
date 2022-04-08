@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const loginAction = async (credentials) => {
+export const loginAction = async (credentials) => {
     let actionSuccess = false;
     let actionResponse;
     try {
@@ -11,9 +11,10 @@ const loginAction = async (credentials) => {
       actionSuccess = false;
     }
     return {actionResponse , actionSuccess};
+
 }
 
-const signupAction = async (userDetails) => {
+export const signupAction = async (userDetails) => {
   let actionSuccess = false;
   let actionResponse;
   try {
@@ -25,5 +26,3 @@ const signupAction = async (userDetails) => {
   }
   return {actionResponse , actionSuccess};
 }
-
-export { loginAction , signupAction };

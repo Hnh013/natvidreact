@@ -7,10 +7,10 @@ export const Videos = () => {
     const { videos } = useData();
 
     return (
-    <main className='main'>
-        <div className='videos-wrapper px-xs py-sm d-flex fw-wrap ai-c jc-c gap-1 mx-auto'>
-            { videos.map( video => <Video fromHistory={false} key={video._id} videoDetails={video} /> ) }
-        </div>
-    </main>
+        <main className='main'>
+            <div className='videos-wrapper px-xs py-sm d-flex fw-wrap ai-c jc-c gap-1 mx-auto'>
+                {videos.map(video => <Video fromHistory={false} key={video._id} fromPlaylists={'none'} videoDetails={video} />)}
+            </div>
+        </main>
     );
 };

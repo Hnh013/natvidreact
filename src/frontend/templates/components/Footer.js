@@ -8,13 +8,11 @@ export const Footer = () => {
                 <span className='txt-bee'>&copy; National VideoGraphic</span> 
             </div>
             <div className='d-flex ai-c jc-sa txt-bee' >
-            <div className="px-xs"><span className='f-15x '><i className="fa fa-envelope-o"></i></span></div>
+                <div className="px-xs"><span className='f-15x '><i className="fa fa-envelope-o"></i></span></div>
                 <div className="px-xs"><span className='f-15x '><i className="fa fa-facebook-square"></i></span></div>
-        <div className="px-xs"><span className='f-15x '><i className="fa fa-instagram"></i></span></div>
-        <div className="px-xs"><span className='f-15x'><i className="fa fa-twitter-square"></i></span></div>
-
+                <div className="px-xs"><span className='f-15x '><i className="fa fa-instagram"></i></span></div>
+                <div className="px-xs"><span className='f-15x'><i className="fa fa-twitter-square"></i></span></div>
             </div>
-
         </footer>
     );
 };

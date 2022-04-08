@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const getCategories = async () => {
+export const getCategories = async () => {
     let actionSuccess = false;
     let actionResponse;
     try {
@@ -12,5 +12,3 @@ const getCategories = async () => {
     }
     return {actionResponse , actionSuccess};
 }
-
-export { getCategories };

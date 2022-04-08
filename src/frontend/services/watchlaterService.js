@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const getWatchLater = async (myToken) => {
+export const getWatchLater = async (myToken) => {
     let actionResponse;
     let actionSuccess = false;
     try {
@@ -13,7 +13,7 @@ const getWatchLater = async (myToken) => {
     return { actionResponse , actionSuccess };
 }
 
-const addToWatchLater = async (myToken , videoDetails) => {
+export const addToWatchLater = async (myToken , videoDetails) => {
     let actionResponse;
     let actionSuccess = false;
     try {
@@ -26,7 +26,7 @@ const addToWatchLater = async (myToken , videoDetails) => {
     return { actionResponse , actionSuccess };
 }
 
-const removeFromWatchLater = async (myToken , videoId) => {
+export const removeFromWatchLater = async (myToken , videoId) => {
     let actionResponse;
     let actionSuccess = false;
     try {
@@ -38,6 +38,3 @@ const removeFromWatchLater = async (myToken , videoId) => {
     }
     return { actionResponse , actionSuccess };
 }
-
-
-export { getWatchLater , addToWatchLater , removeFromWatchLater };

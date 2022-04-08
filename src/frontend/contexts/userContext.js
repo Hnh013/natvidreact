@@ -8,23 +8,21 @@ const UserProvider = ({children}) => {
 
     const userStateUpdater = (state, action) => {
         switch(action.type) {
-            case 'LOGIN': 
+            case 'LOG_IN': 
                 return { ...state, ...action.payload };
-            case 'LOGOUT':
+            case 'LOG_OUT':
                 return { ...state , ...user };
-            case 'ADDTOHISTORY': 
-                return { ...state, foundUser : action.payload };
-            case 'REMOVEFROMHISTORY': 
-                return { ...state, foundUser : action.payload };
-            case 'CLEARHISTORY': 
-                return { ...state, foundUser : action.payload };
-            case 'ADDTOLIKES': 
-                return { ...state, foundUser : action.payload };
-            case 'REMOVEFROMLIKES': 
-                return { ...state, foundUser : action.payload };
-            case 'ADDTOWATCHLATER': 
-                return { ...state, foundUser : action.payload };
-            case 'REMOVEFROMWATCHLATER': 
+            case 'ADD_TO_HISTORY': 
+            case 'REMOVE_FROM_HISTORY': 
+            case 'CLEAR_HISTORY': 
+            case 'ADD_TO_LIKES': 
+            case 'REMOVE_FROM_LIKES': 
+            case 'ADD_TO_WATCH_LATER': 
+            case 'REMOVE_FROM_WATCH_LATER': 
+            case 'ADD_PLAY_LIST': 
+            case 'REMOVE_PLAY_LIST': 
+            case 'ADD_VIDEO_TO_PLAY_LIST': 
+            case 'REMOVE_VIDEO_FROM_PLAY_LIST': 
                 return { ...state, foundUser : action.payload };
             default:
                 return { ...state};
