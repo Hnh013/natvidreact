@@ -1,5 +1,5 @@
 export { addToWatchLater, getWatchLater, removeFromWatchLater } from "./watchlaterService";
-export { findObjInArray, getAllVideos, updateAttributeInArray, updateIfObjectinArray, videoInArrayChecker } from "./videoService";
+export { findObjInArray, getAllVideos, updateAttributeInArray, updateIfObjectinArray, videoInArrayChecker , updatePlaylistIfObjectInVideos } from "./videoService";
 export { addPlaylist, addVideoToPlaylist, getPlaylist, removePlaylist, removeVideoFromPlaylist } from "./playlistService";
 export { addToLikes, getLikes, removeFromLikes } from "./likeService";
 export { addToHistory, clearHistory, getHistory, removeFromHistory } from "./historyService";

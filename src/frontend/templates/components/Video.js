@@ -4,7 +4,7 @@ import ReactPlayer from 'react-player';
 import { useUser } from '../../contexts/userContext';
 import { Link } from 'react-router-dom';
 import { useData } from '../../contexts/dataContext';
-import { addPlaylist, addToHistory, addToLikes, addToWatchLater, addVideoToPlaylist, removeFromHistory, removeFromLikes, removeFromWatchLater, removeVideoFromPlaylist, toastError, toastSuccess, updateIfObjectinArray } from '../../services';
+import { addPlaylist, addToHistory, addToLikes, addToWatchLater, addVideoToPlaylist, removeFromHistory, removeFromLikes, removeFromWatchLater, removeVideoFromPlaylist, toastError, toastSuccess, updateIfObjectinArray, updatePlaylistIfObjectInVideos } from '../../services';
 
 export const Video = (props) => {
 
@@ -70,11 +70,12 @@ export const Video = (props) => {
             toastSuccess('Video added to Likes');
             let newHistory = updateIfObjectinArray(userState.foundUser.history, likedVideo, 'inLikes', true);
             let newWatchLater = updateIfObjectinArray(userState.foundUser.watchlater, likedVideo, 'inLikes', true);
+            let newPlaylists = updatePlaylistIfObjectInVideos(userState.foundUser.playlists, likedVideo, 'inLikes', true)
             userDispatcher({
                 type: 'ADD_TO_LIKES',
                 payload: {
                     ...userState.foundUser,
-                    history: newHistory, watchlater: newWatchLater,
+                    history: newHistory, watchlater: newWatchLater, playlists : newPlaylists, 
                     likes: [...userState.foundUser.likes, { ...likedVideo }]
                 }
             });
@@ -90,11 +91,12 @@ export const Video = (props) => {
             toastSuccess('Video added to Watchlater');
             let newHistory = updateIfObjectinArray(userState.foundUser.history, watchlaterVideo, 'inWatchlater', true);
             let newLikes = updateIfObjectinArray(userState.foundUser.likes, watchlaterVideo, 'inWatchlater', true);
+            let newPlaylists = updatePlaylistIfObjectInVideos(userState.foundUser.playlists, watchlaterVideo, 'inWatchlater', true);
             userDispatcher({
                 type: 'ADD_TO_WATCH_LATER',
                 payload: {
                     ...userState.foundUser,
-                    history: newHistory, likes: newLikes,
+                    history: newHistory, likes: newLikes, playlists: newPlaylists,
                     watchlater: [...userState.foundUser.watchlater, { ...watchlaterVideo }]
                 }
             });
@@ -109,11 +111,12 @@ export const Video = (props) => {
             toastSuccess('Video removed from Likes');
             let newHistory = updateIfObjectinArray(userState.foundUser.history, videoDetails, 'inLikes', false);
             let newWatchLater = updateIfObjectinArray(userState.foundUser.watchlater, videoDetails, 'inLikes', false);
+            let newPlaylists = updatePlaylistIfObjectInVideos(userState.foundUser.playlists, videoDetails, 'inLikes', false);
             userDispatcher({
                 type: 'REMOVE_FROM_LIKES',
                 payload: {
                     ...userState.foundUser,
-                    history: newHistory, watchlater: newWatchLater,
+                    history: newHistory, watchlater: newWatchLater, playlists : newPlaylists,
                     likes: [...userState.foundUser.likes].filter(video => video._id !== videoDetails._id)
                 }
             });
@@ -128,11 +131,12 @@ export const Video = (props) => {
             toastSuccess('Video removed from Watchlater');
             let newHistory = updateIfObjectinArray(userState.foundUser.history, videoDetails, 'inWatchlater', false);
             let newLikes = updateIfObjectinArray(userState.foundUser.likes, videoDetails, 'inWatchlater', false);
+            let newPlaylists = updatePlaylistIfObjectInVideos(userState.foundUser.playlists, videoDetails, 'inWatchlater', false);
             userDispatcher({
                 type: 'REMOVE_FROM_WATCH_LATER',
                 payload: {
                     ...userState.foundUser,
-                    history: newHistory, likes: newLikes,
+                    history: newHistory, likes: newLikes, playlists: newPlaylists,
                     watchlater: [...userState.foundUser.watchlater].filter(video => video._id !== videoDetails._id)
                 }
             });
