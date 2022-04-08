@@ -1,4 +1,4 @@
-# NatVid (NationalVidepgraphic) : A video Library<a name="top"></a>
+# NatVid (NationalVideographic) : A video Library<a name="top"></a>
 
 ### Disclaimer
 
