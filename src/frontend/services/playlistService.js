@@ -1,6 +1,6 @@
 import axios from 'axios';
    
-const getPlaylist = async (myToken) => {
+export const getPlaylist = async (myToken) => {
           let actionResponse = {};
           let actionSuccess = false;
           try {
@@ -13,7 +13,7 @@ const getPlaylist = async (myToken) => {
       return { actionResponse , actionSuccess };
 }
 
-const addPlaylist = async (myToken , playlistDetails) => {
+export const addPlaylist = async (myToken , playlistDetails) => {
     let playListData = { playlist: playlistDetails };
     let actionResponse;
     let actionSuccess = false;
@@ -27,7 +27,7 @@ const addPlaylist = async (myToken , playlistDetails) => {
     return { actionResponse , actionSuccess };
 }
 
-const removePlaylist = async (myToken , playListId) => {
+export const removePlaylist = async (myToken , playListId) => {
     let actionResponse;
     let actionSuccess = false;
     try {
@@ -40,7 +40,7 @@ const removePlaylist = async (myToken , playListId) => {
     return { actionResponse , actionSuccess };
 }
 
-const addVideoToPlaylist = async (myToken , playlistId, videoDetails) => {
+export const addVideoToPlaylist = async (myToken , playlistId, videoDetails) => {
     let actionResponse;
     let actionSuccess = false;
     try {
@@ -53,7 +53,7 @@ const addVideoToPlaylist = async (myToken , playlistId, videoDetails) => {
     return { actionResponse, actionSuccess };
   }
   
-  const removeVideoFromPlaylist = async (myToken , playListId, videoId) => {
+export const removeVideoFromPlaylist = async (myToken , playListId, videoId) => {
     let actionResponse;
     let actionSuccess = false;
     try {
@@ -65,8 +65,3 @@ const addVideoToPlaylist = async (myToken , playlistId, videoDetails) => {
     }
     return { actionResponse , actionSuccess };
   }
-
-
-
-
-export { getPlaylist , addPlaylist , removePlaylist , addVideoToPlaylist , removeVideoFromPlaylist };

@@ -7,7 +7,7 @@ const DataContext = createContext();
 
 const DataProvider = ({ children }) => {
     let [ videos , setVideos] = useState([]);
-    let [ selectedVideo , setSelectedVideo ] = useState('none');
+    const [ selectedVideo , setSelectedVideo ] = useState('none');
 
     const { userState } = useUser();
 

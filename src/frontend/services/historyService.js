@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const getHistory = async (myToken) => {
+export const getHistory = async (myToken) => {
     let actionResponse;
     let actionSuccess = false;
     try {
@@ -13,7 +13,7 @@ const getHistory = async (myToken) => {
     return { actionResponse , actionSuccess };;
 }
 
-const addToHistory = async (myToken , videoDetails) => {
+export const addToHistory = async (myToken , videoDetails) => {
     let actionResponse;
     let actionSuccess = false;
     try {
@@ -26,7 +26,7 @@ const addToHistory = async (myToken , videoDetails) => {
     return { actionResponse , actionSuccess };;
 }
 
-const removeFromHistory = async (myToken , videoId) => {
+export const removeFromHistory = async (myToken , videoId) => {
     let actionResponse;
     let actionSuccess = false;
     try {
@@ -39,7 +39,7 @@ const removeFromHistory = async (myToken , videoId) => {
     return { actionResponse , actionSuccess };
 }
 
-const clearHistory = async (myToken) => {
+export const clearHistory = async (myToken) => {
   let actionResponse;
   let actionSuccess = false;
     try {
@@ -51,5 +51,3 @@ const clearHistory = async (myToken) => {
     }
     return { actionResponse , actionSuccess };;
 }
-
-export { getHistory , addToHistory , removeFromHistory , clearHistory };

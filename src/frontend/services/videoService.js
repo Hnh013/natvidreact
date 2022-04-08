@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const getAllVideos = async () => {
+export const getAllVideos = async () => {
     let actionResponse;
     let actionSuccess = false;
     try {
@@ -13,7 +13,7 @@ const getAllVideos = async () => {
     return { actionResponse , actionSuccess };
 }
 
-const videoInArrayChecker = ( userObjectArray , videosArray , objectArrayName ) => {
+export const videoInArrayChecker = ( userObjectArray , videosArray , objectArrayName ) => {
     let activationFlag = false;
     let customArray = [...videosArray];
     if( userObjectArray !== [] ) {
@@ -34,15 +34,15 @@ const videoInArrayChecker = ( userObjectArray , videosArray , objectArrayName ) 
     return activationFlag ? customArray : videosArray;
 }
 
-const findObjInArray = (targetArray, videoDetails) => {
+export const findObjInArray = (targetArray, videoDetails) => {
     return Boolean(targetArray.find( x => x._id === videoDetails._id));
 }
 
-const updateAttributeInArray = (targetArray , attributeName , videoDetails , flagStatus ) => {
+export const updateAttributeInArray = (targetArray , attributeName , videoDetails , flagStatus ) => {
     return [...targetArray].map(x => x._id === videoDetails._id ? { ...x , [attributeName]: flagStatus } : x );
 }
 
-const updateIfObjectinArray = (targetArray, videoDetails, attributeName, flagStatus) => {
+export const updateIfObjectinArray = (targetArray, videoDetails, attributeName, flagStatus) => {
     let activationFlag = false;
     let newArray = [];
     if(findObjInArray(targetArray,videoDetails)) {
@@ -51,6 +51,3 @@ const updateIfObjectinArray = (targetArray, videoDetails, attributeName, flagSta
     }
     return activationFlag ? newArray : targetArray;
 }
-
-
-export { getAllVideos , videoInArrayChecker , updateIfObjectinArray };
