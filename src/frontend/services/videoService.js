@@ -52,17 +52,3 @@ export const updateIfObjectinArray = (targetArray, videoDetails, attributeName, 
     return activationFlag ? newArray : targetArray;
 }
 
-export const updatePlaylistIfObjectInVideos = (targetPlaylistArray, attributeName , videoDetails , flagStatus) => {
-    let activationFlag = false;
-    let newPlaylists = [];
-    if ( targetPlaylistArray.length > 0) {
-        activationFlag = true;
-        for(let i = 0; i < targetPlaylistArray.length; i++) {
-            let newVideosArray = updateIfObjectinArray(targetPlaylistArray[i].videos, videoDetails , attributeName , flagStatus);
-            let newPlaylist = { ...targetPlaylistArray[i] , videos : newVideosArray }
-            newPlaylists.push(newPlaylist);
-        }
-    }
-    return activationFlag ? newPlaylists : targetPlaylistArray;  
-}
-
